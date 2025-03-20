@@ -19,7 +19,5 @@ class Application(var data: Data) : JFrame("macrox") {
         // Set up logger
         logger.setBackground(Background.GREEN)
         logger.setForeground(Foreground.WHITE)
-
-
     }
 }
