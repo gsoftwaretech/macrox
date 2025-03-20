@@ -1,5 +1,7 @@
 package tech.gsoftware.macrox;
 
+import tech.gsoftware.macrox.data.Json;
+
 import javax.swing.*;
 
 /**

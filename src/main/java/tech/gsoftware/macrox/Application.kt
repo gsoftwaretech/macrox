@@ -1,6 +1,8 @@
 package tech.gsoftware.macrox
 
 import dev.woz07.lwlfj.Logger
+import dev.woz07.lwlfj.color.Background
+import dev.woz07.lwlfj.color.Foreground
 import javax.swing.JFrame
 
 /**
@@ -9,10 +11,13 @@ import javax.swing.JFrame
  * @description     The JFrame of the gui which contains all the content
  */
 
-class Application : JFrame() {
-    val logger = Logger()
+class Application : JFrame("macrox") {
+    private val logger = Logger()
 
     init {
+        // Set up logger
+        logger.setBackground(Background.GREEN)
+        logger.setForeground(Foreground.WHITE)
 
     }
 }
