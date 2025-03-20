@@ -5,7 +5,6 @@ import dev.woz07.lwlfj.Logger;
 import dev.woz07.lwlfj.color.Background;
 import dev.woz07.lwlfj.color.Foreground;
 import dev.woz07.lwlfj.level.Severity;
-import tech.gsoftware.macrox.Application;
 
 import java.io.File;
 import java.io.IOException;
