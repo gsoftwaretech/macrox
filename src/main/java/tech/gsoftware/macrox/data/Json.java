@@ -16,11 +16,10 @@ import java.io.IOException;
  */
 
 public class Json {
-    private final Logger logger;
+    private final Logger logger = new Logger();
     private static ObjectMapper mapper = new ObjectMapper();
 
-    public Json(Logger logger) {
-        this.logger = logger;
+    public Json() {
         this.logger.setBackground(Background.WHITE);
         this.logger.setForeground(Foreground.RED);
     }

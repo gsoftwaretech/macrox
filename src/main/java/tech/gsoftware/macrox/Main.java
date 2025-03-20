@@ -1,5 +1,6 @@
 package tech.gsoftware.macrox;
 
+import dev.woz07.lwlfj.Logger;
 import tech.gsoftware.macrox.data.Json;
 
 import javax.swing.*;
