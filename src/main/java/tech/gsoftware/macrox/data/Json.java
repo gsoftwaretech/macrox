@@ -9,6 +9,12 @@ import dev.woz07.lwlfj.level.Severity;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Json.java
+ * @author          woz07
+ * @description     Class that lets us read and write data to json file
+ */
+
 public class Json {
     private final Logger logger;
     private static ObjectMapper mapper = new ObjectMapper();
