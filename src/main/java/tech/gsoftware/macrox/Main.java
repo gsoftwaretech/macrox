@@ -22,11 +22,6 @@ public class Main {
         // Read the data from the JSON file
         Data data = json.read("data.json");
 
-        // TODO: Continue but also take a look at this, which allows for custom intellJ themes:
-        //  https://www.formdev.com/flatlaf/themes/
-        //  "How to find a 3rd party IntelliJ theme?"
-        //  Can also check recent chatgpt dms
-
         // Set theme
         String theme = Objects.requireNonNull(data.getTheme());
         if (Objects.equals(data.getOtype(), "windows")) {
