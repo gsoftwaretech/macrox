@@ -1,7 +1,7 @@
 package tech.gsoftware.macrox;
 
 import com.formdev.flatlaf.*;
-import com.formdev.flatlaf.intellijthemes.*;
+//import com.formdev.flatlaf.intellijthemes.*;
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import tech.gsoftware.macrox.data.Data;
