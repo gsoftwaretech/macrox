@@ -1,5 +1,6 @@
 package tech.gsoftware.macrox;
 
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import tech.gsoftware.macrox.data.Data;
 import tech.gsoftware.macrox.data.Json;
 
@@ -19,6 +20,10 @@ public class Main {
         Data data = json.read("data.json");
 
         // Set theme
+//        switch (Objects.requireNonNull(data.getTheme())) {
+//            case "light":
+//                FlatMacLightLaf.
+//        }
 
         // Launch the app and pass through data object
         SwingUtilities.invokeLater(() -> new Application(data));

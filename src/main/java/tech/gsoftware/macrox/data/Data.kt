@@ -7,6 +7,7 @@ package tech.gsoftware.macrox.data
  */
 
 data class Data(
-    var theme: String? = null,
-    var items: List<Item>? = null
+    var theme: String? = null,      // Dark mode? Light mode?
+    var otype: String? = null,      // Os type, Windows? Mac?
+    var items: List<Item>? = null   // Item info, such as keys, active or not, etc
 )

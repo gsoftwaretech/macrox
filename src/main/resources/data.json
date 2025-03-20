@@ -1,6 +1,18 @@
 {
   "theme": "light",
+  "otype": "windows",
   "items": [
-    
+    {
+      "name": "dasopk,dasd-launcher",
+      "path": "C:\\path",
+      "keys": [12],
+      "active": false
+    },
+    {
+      "name": "yellowbook",
+      "path": "C:\\kword",
+      "keys": [20],
+      "active": true
+    }
   ]
 }
