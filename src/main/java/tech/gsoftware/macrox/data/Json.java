@@ -8,6 +8,7 @@ import dev.woz07.lwlfj.level.Severity;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Json.java
@@ -25,10 +26,17 @@ public class Json {
     }
 
     public Data read(String path) {
+        InputStream input = getClass().getClassLoader().getResourceAsStream(path);
+
+        if (input == null) {
+            logger.log(Json.class, Severity.SEVERE, "Unable to find resource: '" + path + "'.");
+            return null;
+        }
+
         try {
-            return mapper.readValue(new File(path), Data.class);
+            return mapper.readValue(input, Data.class);
         } catch (IOException e) {
-            logger.log(Json.class, Severity.SEVERE, "Unable to read data from path: '" + path + "'.");
+            logger.log(Json.class, Severity.SEVERE, "Unable to read data from resource: '" + path + "'.");
             return null;
         }
     }
