@@ -10,6 +10,7 @@ import tech.gsoftware.macrox.ui.pages.SupportPage
 import tech.gsoftware.macrox.ui.pages.InformationPage
 import java.awt.BorderLayout
 import java.awt.Dimension
+import java.io.IOException
 import javax.swing.*
 
 /**
@@ -18,7 +19,7 @@ import javax.swing.*
  * @description     The JFrame of the gui which contains all the content
  */
 
-class Application(var data: Data) : JFrame("macrox") {
+class Application(private var data: Data) : JFrame("macrox") {
     private val logger = Logger()
     private val container = JTabbedPane()
 
@@ -47,5 +48,10 @@ class Application(var data: Data) : JFrame("macrox") {
         setLocationRelativeTo(null)
         isResizable = false
         isVisible   = true
+
+        // Change opacity
+        val s = ScriptExecutor.getInstance()
+        val args = arrayOf(data.opacity.toString());
+        s.execute("opacity.exe", args) // Ignore returned value
     }
 }
