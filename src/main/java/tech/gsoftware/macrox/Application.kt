@@ -5,6 +5,7 @@ import dev.woz07.lwlfj.color.Background
 import dev.woz07.lwlfj.color.Foreground
 import tech.gsoftware.macrox.data.Data
 import java.awt.Dimension
+import javax.swing.ImageIcon
 import javax.swing.JFrame
 
 /**
@@ -23,6 +24,7 @@ class Application(var data: Data) : JFrame("macrox") {
 
         // Set up gui
         size = Dimension(600, 300)
+        iconImage = ImageIcon(javaClass.getResource("/favicon.png")).image
 
         defaultCloseOperation = EXIT_ON_CLOSE
         setLocationRelativeTo(null)
