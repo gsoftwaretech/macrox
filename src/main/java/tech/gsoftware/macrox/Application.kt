@@ -49,9 +49,20 @@ class Application(private var data: Data) : JFrame("macrox") {
         isResizable = false
         isVisible   = true
 
-        // Change opacity
-        val s = ScriptExecutor.getInstance()
-        val args = arrayOf(data.opacity.toString());
-        s.execute("opacity.exe", args) // Ignore returned value
+
+
+        // Wait for window to be fully initialized
+        SwingUtilities.invokeLater {
+            // Change opacity after JFrame is visible
+            val s = ScriptExecutor.getInstance()
+            val args = arrayOf(data.opacity.toString())
+            println(s.execute("opacity.exe", args)) // Ignore returned value
+        }
+
+        // TODO:
+        //  Add menu and controls which allow the user to change mode and opacity
+        //  Continue working on other JPanels
+        //  ~
+        //  Also, this opacity trick only works on window OS
     }
 }

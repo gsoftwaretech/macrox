@@ -19,7 +19,6 @@ import java.util.List;
  */
 
 public class ScriptExecutor {
-    private final String ROOT = "scripts/";
     private static volatile ScriptExecutor INSTANCE;
     private ScriptExecutor() {}
 
@@ -40,7 +39,7 @@ public class ScriptExecutor {
      * @param args  The args to pass through with the exe
      * @return      Returns 0 if success else 1 as fail
      */
-    public int execute(String name, String[] args) {
+    public int execute(String name, String[] args) throws IOException {
         // Look for the executable resource
         URL resource = getClass().getClassLoader().getResource(name);
 
@@ -48,8 +47,9 @@ public class ScriptExecutor {
             return 1; // Failed
         }
 
+        Path temp;
         try {
-            Path temp = Files.createTempFile(null, ".exe");
+            temp = Files.createTempFile(null, ".exe");
 
             try (InputStream input = resource.openStream()) {
                 Files.copy(input, temp, StandardCopyOption.REPLACE_EXISTING);
@@ -71,10 +71,11 @@ public class ScriptExecutor {
             }
 
             ProcessBuilder builder = new ProcessBuilder(command);
-            builder.start();
+            builder.start().waitFor();
+            Files.deleteIfExists(temp);
 
             return 0; // Success
-        } catch (IOException ignore) {
+        } catch (IOException | InterruptedException ignore) {
             return 1;
         }
     }
